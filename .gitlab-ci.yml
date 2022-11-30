@@ -1,0 +1,11 @@
+include:
+  project: gardenlinux/gardenlinux-package-build
+  file: pipeline/pipeline.yml
+
+variables:
+  SOURCE_NAME: python3.11
+  # Always disable features that don't work while cross-compiling:
+  # - benchmark (nobench)
+  # - tests run on the new binary (nocheck)
+  # - profiled build (nopgo)
+  DEB_BUILD_OPTIONS: nobench nocheck nopgo
