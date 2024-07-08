@@ -1,2 +1,2 @@
-apt_src python3.11
+apt_src python3.12
 apply_patches
