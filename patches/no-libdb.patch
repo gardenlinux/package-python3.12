@@ -3,11 +3,11 @@ diff --color -Naur a/debian/control.in b/debian/control.in
 +++ b/debian/control.in	2024-05-07 12:08:32.085167735 +0200
 @@ -8,7 +8,7 @@
    lsb-release, sharutils,
-   libreadline-dev | libeditreadline-dev, libncursesw5-dev (>= 5.3), @bd_gcc@
+   libreadline-dev | libeditreadline-dev, libncurses-dev, @bd_gcc@
    zlib1g-dev, libbz2-dev, liblzma-dev,
 -  libgdbm-dev, @bd_dbm@,
 +  libgdbm-dev,
- #  tk-dev, blt-dev (>= 2.4z),
+   tk-dev, blt-dev (>= 2.4z),
    libssl-dev,
    libexpat1-dev,
 diff --color -Naur a/debian/rules b/debian/rules
@@ -30,4 +30,4 @@ diff --color -Naur a/debian/rules b/debian/rules
 -	    -e "s/@bd_dbm@/$(bd_dbm)/g" \
  	    -e "s/@bd_dpkgdev@/$(bd_dpkgdev)/g" \
  		debian/control.in \
- 		$(if $(with_udeb),debian/control.udeb) \
+ 		debian/control.stdlib \
