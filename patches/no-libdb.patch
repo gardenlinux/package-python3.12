@@ -1,7 +1,7 @@
 diff --color -Naur a/debian/control.in b/debian/control.in
 --- a/debian/control.in	2024-05-07 12:05:20.265273538 +0200
 +++ b/debian/control.in	2024-05-07 12:08:32.085167735 +0200
-@@ -7,7 +7,7 @@
+@@ -8,7 +8,7 @@
    lsb-release, sharutils,
    libreadline-dev | libeditreadline-dev, libncursesw5-dev (>= 5.3), @bd_gcc@
    zlib1g-dev, libbz2-dev, liblzma-dev,
@@ -13,7 +13,7 @@ diff --color -Naur a/debian/control.in b/debian/control.in
 diff --color -Naur a/debian/rules b/debian/rules
 --- a/debian/rules	2024-05-07 12:05:20.265273538 +0200
 +++ b/debian/rules	2024-05-07 12:09:20.237141190 +0200
-@@ -92,8 +92,7 @@
+@@ -90,8 +90,7 @@
  # FIXME: remove sid when uploading to unstable, after bookworm is released
  #ifneq (,$(filter $(distrelase), jessie stretch buster bullseye bookworm sid precise trusty xenial bionic focal groovy hirsute))
    with_dbmmodule = yes
@@ -23,7 +23,7 @@ diff --color -Naur a/debian/rules b/debian/rules
  #else
  #  bd_dbm = libgdbm-compat-dev
  #  dbmliborder = gdbm:bdb
-@@ -820,7 +819,6 @@
+@@ -815,7 +814,6 @@
  	    -e "s/@MINPRIO@/$(PY_MINPRIO)/g" \
  	    -e "s/@bd_qual@/$(bd_qual)/g" \
  	    -e "s/@bd_gcc@/$(bd_gcc)/g" \
