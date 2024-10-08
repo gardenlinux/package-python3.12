@@ -1,1 +1,4 @@
 DEB_BUILD_OPTIONS="$DEB_BUILD_OPTIONS nobench nolto nopgo"
+# We need libgdbm-compat-dev for x86 or the build process fails will fail 
+# despite libdb beging disabled.
+apt install libgdbm-compat-dev -y
