@@ -4,3 +4,6 @@ git_src --branch 3.12.7-1 https://salsa.debian.org/cpython-team/python3.git
 # to download the code ourself.
 git_src --branch v3.12.7 https://github.com/python/cpython.git
 apply_patches
+
+# Backporting for the 1592 release.
+version_suffix=gl0~bp1592
