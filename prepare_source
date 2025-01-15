@@ -1,5 +1,5 @@
 git_src --branch 3.12.8-5 https://salsa.debian.org/cpython-team/python3.git
 # Debian does not keep track of the source-code within salsa. Hence, we need
 # to download the code ourself.
-git_src --branch v3.12.8-5 https://github.com/python/cpython.git
+git_src --branch v3.12.8 https://github.com/python/cpython.git
 apply_patches
