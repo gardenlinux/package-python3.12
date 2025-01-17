@@ -3,4 +3,4 @@ DEB_BUILD_OPTIONS="$DEB_BUILD_OPTIONS nobench nolto nopgo"
 apt install python3-pip libgdbm-compat-dev -y
 # Python uses blurb to create NEWS entries and there is not debian package.
 # Do a unclean installation via pip to allow to generate the NEWS.
-pip install --break-system-packages blurb
+pip install --break-system-packages blurb==1.3.0
