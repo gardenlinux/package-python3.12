@@ -1,7 +1,21 @@
-git_src --branch 3.12.8-5 https://salsa.debian.org/cpython-team/python3.git
-# Debian does not keep track of the source-code within salsa. Hence, we need
-# to download the code ourself.
-git_src --branch v3.12.8 https://github.com/python/cpython.git
+debian_version="3.12.8-5"
+version="3.12.12"
+version_orig="v${version}"
+
+version_suffix="gl1+bp1592"
+
+DEBIAN_SRC=$(mktemp -d)
+git clone -b "$debian_version" --depth=1 https://salsa.debian.org/cpython-team/python3.git $DEBIAN_SRC
+pushd $DEBIAN_SRC
+git sparse-checkout set debian
+echo "3.0 (native)" > debian/source/format
+rm -fR debian/patches
+popd
+
+cp -rp "$DEBIAN_SRC/debian" "$dir/src/"
+rm -fR "$DEBIAN_SRC"
+
+git_src -b "${version_orig}" https://github.com/python/cpython.git
+
 import_upstream_patches
 apply_patches
-version_suffix=gl1~bp1592
